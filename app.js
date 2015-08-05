@@ -1,0 +1,18 @@
+var app = angular.module('myApp', []);
+
+app.directive('optIn', function() {
+    return {
+        
+        restrict: 'E',
+        transclude: true,
+        template: '<div class="input">' 
+	                + '<ng-transclude></ng-transclude>' 
+	                +'<div class="form">'
+						+ '<input type="text" name="fname" placeholder="first name" ng-model="fname" required>'
+						+ '<input type="text" name="lname" placeholder="last name" ng-model="lname" required>'
+						+ '<input type="text" name="email" placeholder="email" ng-model="email" required>'
+						+ '<input type="submit" value="Give us yr infoz!">'
+					+'</div> <!--.form -->'
+				+ '</div> <!--.input --> '
+    }
+} )
